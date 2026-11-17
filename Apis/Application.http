@@ -1,0 +1,65 @@
+### 1. GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+### 2. Create a new Employee (Valid POST)
+POST http://localhost:8081/api/v1/employee
+Content-Type: application/json
+
+{
+  "firstName": "Ram",
+  "lastName": "Reddy",
+  "email": "ram1@gmail.com",
+  "dateOfBirth": "2004-12-09",
+  "salary": 45000.00,
+  "employeeStatus": "ACTIVE",
+  "joinDate": "2026-11-09"
+}
+
+### 3. Partial Update Employee (PATCH)
+PATCH http://localhost:8081/api/v1/employee/b9db36cc-310a-4feb-b562-3ebf27f2d180
+Content-Type: application/json
+
+{
+  "email": "ram.updated@gmail.com",
+  "salary": 65000.00
+}
+
+### 4. Full Update Employee (PUT)
+PUT http://localhost:8081/api/v1/employee/b9db36cc-310a-4feb-b562-3ebf27f2d180
+Content-Type: application/json
+
+{
+  "firstName": "Ram Kumar",
+  "lastName": "Reddy",
+  "email": "ram.reddy@gmail.com",
+  "dateOfBirth": "2004-12-09",
+  "salary": 50000.00,
+  "employeeStatus": "ACTIVE",
+  "joinDate": "2026-11-09"
+}
+
+### 5. Legacy Application Request (Commented Out)
+POST http://localhost:8081/api/application
+Content-Type: application/json
+
+{
+  "name": "Ramprasad",
+  "age": 21,
+  "email": "ram@example1.com"
+}
+
+### 6. Invalid Reference Body (Commented Out)
+// {
+//   "firstName": "",
+//   "lastName": "Reddy",
+//   "email": "invalid-email",
+//   "dateOfBirth": "2030-01-01",
+//   "salary": -5000,
+//   "employeeStatus": null,
+//   "joinDate": "2026-11-09"
+// }
+
+
+###7 Delete an Employee by ID
+DELETE http://localhost:8081/api/v1/employee/3d7eb61c-ed05-483b-8c2d-022f437a286e
